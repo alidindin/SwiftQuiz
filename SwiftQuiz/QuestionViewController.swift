@@ -12,6 +12,8 @@ class QuestionViewController: UIViewController {
 
     @IBOutlet weak var answer1Button: UIButton!
     
+    var question: Question?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -34,7 +36,10 @@ class QuestionViewController: UIViewController {
         
         let alertController = UIAlertController(title: "Richtig", message: "Super!", preferredStyle: .Alert)
         let action = UIAlertAction(title: "🤘", style: .Default) { (_) in
-            alertController.dismissViewControllerAnimated(true, completion: nil)
+            alertController.dismissViewControllerAnimated(true, completion: { 
+//                self.navigationController?.popToRootViewControllerAnimated(true)
+            })
+            self.navigationController?.popToRootViewControllerAnimated(true)
         }
         alertController.addAction(action)
         presentViewController(alertController, animated: true, completion: nil)

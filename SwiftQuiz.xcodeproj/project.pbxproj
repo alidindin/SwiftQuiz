@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		6C4A4C221CD78B4500A41948 /* Question.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C4A4C211CD78B4500A41948 /* Question.swift */; };
 		6C8B1AFA1CC50C9300592579 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8B1AF91CC50C9300592579 /* AppDelegate.swift */; };
 		6C8B1AFC1CC50C9300592579 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6C8B1AFB1CC50C9300592579 /* ViewController.swift */; };
 		6C8B1AFF1CC50C9300592579 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 6C8B1AFD1CC50C9300592579 /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		6C4A4C211CD78B4500A41948 /* Question.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Question.swift; sourceTree = "<group>"; };
 		6C8B1AF61CC50C9200592579 /* SwiftQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		6C8B1AF91CC50C9300592579 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		6C8B1AFB1CC50C9300592579 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -63,6 +65,7 @@
 				6C8B1B021CC50C9300592579 /* LaunchScreen.storyboard */,
 				6C8B1B051CC50C9300592579 /* Info.plist */,
 				6C8B1B0B1CC5311400592579 /* QuestionViewController.swift */,
+				6C4A4C211CD78B4500A41948 /* Question.swift */,
 			);
 			path = SwiftQuiz;
 			sourceTree = "<group>";
@@ -139,6 +142,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C8B1AFC1CC50C9300592579 /* ViewController.swift in Sources */,
+				6C4A4C221CD78B4500A41948 /* Question.swift in Sources */,
 				6C8B1AFA1CC50C9300592579 /* AppDelegate.swift in Sources */,
 				6C8B1B0C1CC5311400592579 /* QuestionViewController.swift in Sources */,
 			);
@@ -292,6 +296,7 @@
 				6C8B1B0A1CC50C9300592579 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 	};
