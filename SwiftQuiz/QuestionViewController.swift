@@ -20,8 +20,12 @@ class QuestionViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // Do any additional setup after loading the view.
+        
+        textLabel.text = question?.text
+        answer1Button.setTitle(question?.answer1, forState: .Normal)
+        answer2Button.setTitle(question?.answer2, forState: .Normal)
+        answer3Button.setTitle(question?.answer3, forState: .Normal)
+        answer4Button.setTitle(question?.answer4, forState: .Normal)
     }
 
     override func didReceiveMemoryWarning() {
@@ -30,33 +34,43 @@ class QuestionViewController: UIViewController {
     }
     
     @IBAction func answer1ButtonHandler(sender: UIButton) {
-        print("Falsch")
-        sender.backgroundColor = UIColor.redColor()
+        checkAnswer(1, button: sender)
     }
     
     @IBAction func answer2ButtonHandler(sender: UIButton) {
-        print("Richtig")
-        sender.backgroundColor = UIColor.greenColor()
-        
-        let alertController = UIAlertController(title: "Richtig", message: "Super!", preferredStyle: .Alert)
-        let action = UIAlertAction(title: "🤘", style: .Default) { (_) in
-            alertController.dismissViewControllerAnimated(true, completion: { 
-//                self.navigationController?.popToRootViewControllerAnimated(true)
-            })
-            self.navigationController?.popToRootViewControllerAnimated(true)
-        }
-        alertController.addAction(action)
-        presentViewController(alertController, animated: true, completion: nil)
+        checkAnswer(2, button: sender)
     }
     
     @IBAction func answer3ButtonHandler(sender: UIButton) {
-        print("Falsch")
-        sender.backgroundColor = UIColor.redColor()
+        checkAnswer(3, button: sender)
     }
     
     @IBAction func answer4ButtonHandler(sender: UIButton) {
-        print("Falsch")
-        sender.backgroundColor = UIColor.redColor()
+        checkAnswer(4, button: sender)
+    }
+    
+    private func checkAnswer(index: Int, button: UIButton) {
+        if index == question?.rightAnswer {
+            print("Richtig")
+            button.backgroundColor = UIColor.greenColor()
+            
+            let alertController = UIAlertController(title: "Richtig", message: "Super!", preferredStyle: .Alert)
+            let action = UIAlertAction(title: "🤘", style: .Default) { (_) in
+                self.navigationController?.popToRootViewControllerAnimated(true)
+            }
+            alertController.addAction(action)
+            presentViewController(alertController, animated: true, completion: nil)
+        } else {
+            print("Falsch")
+            button.backgroundColor = UIColor.redColor()
+            
+            let alertController = UIAlertController(title: "Falsch", message: "Du bist doof!", preferredStyle: .Alert)
+            let action = UIAlertAction(title: "👎", style: .Default) { (_) in
+                self.navigationController?.popToRootViewControllerAnimated(true)
+            }
+            alertController.addAction(action)
+            presentViewController(alertController, animated: true, completion: nil)
+        }
     }
 
     /*
