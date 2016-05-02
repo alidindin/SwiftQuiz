@@ -23,20 +23,31 @@ class QuestionViewController: UIViewController {
         // Dispose of any resources that can be recreated.
     }
     
-    @IBAction func answer1ButtonHandler(sender: AnyObject) {
+    @IBAction func answer1ButtonHandler(sender: UIButton) {
         print("Falsch")
+        sender.backgroundColor = UIColor.redColor()
     }
     
-    @IBAction func answer2ButtonHandler(sender: AnyObject) {
+    @IBAction func answer2ButtonHandler(sender: UIButton) {
         print("Richtig")
+        sender.backgroundColor = UIColor.greenColor()
+        
+        let alertController = UIAlertController(title: "Richtig", message: "Super!", preferredStyle: .Alert)
+        let action = UIAlertAction(title: "🤘", style: .Default) { (_) in
+            alertController.dismissViewControllerAnimated(true, completion: nil)
+        }
+        alertController.addAction(action)
+        presentViewController(alertController, animated: true, completion: nil)
     }
     
-    @IBAction func answer3ButtonHandler(sender: AnyObject) {
+    @IBAction func answer3ButtonHandler(sender: UIButton) {
         print("Falsch")
+        sender.backgroundColor = UIColor.redColor()
     }
     
-    @IBAction func answer4ButtonHandler(sender: AnyObject) {
+    @IBAction func answer4ButtonHandler(sender: UIButton) {
         print("Falsch")
+        sender.backgroundColor = UIColor.redColor()
     }
 
     /*
