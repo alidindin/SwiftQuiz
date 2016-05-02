@@ -154,6 +154,10 @@
                     <navigationItem key="navigationItem" title="Frage" id="Ud7-5O-Csj"/>
                     <connections>
                         <outlet property="answer1Button" destination="CyW-kj-yZH" id="M0M-0v-4a7"/>
+                        <outlet property="answer2Button" destination="mhn-oO-gvz" id="711-K0-Xzl"/>
+                        <outlet property="answer3Button" destination="dx9-4k-WmJ" id="Hnl-I6-H9j"/>
+                        <outlet property="answer4Button" destination="8al-0y-r63" id="hO2-KG-A4U"/>
+                        <outlet property="textLabel" destination="zJY-HA-u6x" id="Zxq-28-gR0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hVU-6i-C2z" userLabel="First Responder" sceneMemberID="firstResponder"/>
