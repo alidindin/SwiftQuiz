@@ -16,10 +16,19 @@ class QuestionViewController: UIViewController {
     @IBOutlet weak var answer3Button: UIButton!
     @IBOutlet weak var answer4Button: UIButton!
     
+    var questions: [Question]?
     var question: Question?
     
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        guard let questions = questions else {
+            return
+        }
+        
+        let index = Int(arc4random()) % questions.count
+        question = questions[index]
+        self.questions?.removeAtIndex(index)
         
         textLabel.text = question?.text
         answer1Button.setTitle(question?.answer1, forState: .Normal)
@@ -56,7 +65,7 @@ class QuestionViewController: UIViewController {
             
             let alertController = UIAlertController(title: "Richtig", message: "Super!", preferredStyle: .Alert)
             let action = UIAlertAction(title: "🤘", style: .Default) { (_) in
-                self.navigationController?.popToRootViewControllerAnimated(true)
+                self.showNextQuestion()
             }
             alertController.addAction(action)
             presentViewController(alertController, animated: true, completion: nil)
@@ -66,21 +75,28 @@ class QuestionViewController: UIViewController {
             
             let alertController = UIAlertController(title: "Falsch", message: "Du bist doof!", preferredStyle: .Alert)
             let action = UIAlertAction(title: "👎", style: .Default) { (_) in
-                self.navigationController?.popToRootViewControllerAnimated(true)
+                self.showNextQuestion()
             }
             alertController.addAction(action)
             presentViewController(alertController, animated: true, completion: nil)
         }
     }
+    
+    private func showNextQuestion() {
+        if questions?.count > 0 {
+            performSegueWithIdentifier("ShowQuestion", sender: nil)
+        } else {
+            navigationController?.popToRootViewControllerAnimated(true)
+        }
+    }
 
-    /*
     // MARK: - Navigation
 
     // In a storyboard-based application, you will often want to do a little preparation before navigation
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+        if let controller = segue.destinationViewController as? QuestionViewController {
+            controller.questions = questions
+        }
     }
-    */
 
 }

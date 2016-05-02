@@ -34,7 +34,7 @@ class ViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let controller = segue.destinationViewController as? QuestionViewController {
-            controller.question = questions.first
+            controller.questions = questions
         }
     }
 
