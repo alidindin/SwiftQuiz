@@ -10,17 +10,30 @@ import UIKit
 
 class ViewController: UIViewController {
 
-    var questions = [Question]()
+    var categories = [Category]()
     
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let question1 = Question(text: "Die Dinosaurier lebten...?", answer1: "mit Schulden", answer2: "knietief im Dispo", answer3: "auf Pump", answer4: "in der Kreide", rightAnswer: 4)
-        questions.append(question1)
-        let question2 = Question(text: "Scotty, der Ingenieur des Raumschiffs Enterprise, war bei den \"Ausflügen\" meist nicht dabei, weil er...?", answer1: "selbstständige", answer2: "angestellte", answer3: "beamte", answer4: "vorgesetzte", rightAnswer: 3)
-        questions.append(question2)
-        let question3 = Question(text: "Hans Albers, Karl Lagerfeld und Helmut Schmidt sind allesamt...?", answer1: "erfolgreiche Döner", answer2: "prominente Pommes", answer3: "berühmte Hamburger", answer4: "legendäre Würstchen", rightAnswer: 3)
-        questions.append(question3)
+        var questionsCategory1 = [Question]()
+        
+        let question1C1 = Question(text: "Was ist 2*2", answer1: "1", answer2: "2", answer3: "3", answer4: "4", rightAnswer: 4)
+        questionsCategory1.append(question1C1)
+        let question2C1 = Question(text: "Was ist 1*1", answer1: "1", answer2: "2", answer3: "3", answer4: "4", rightAnswer: 1)
+        questionsCategory1.append(question2C1)
+        
+        let category1 = Category(title: "Mathe", questions: questionsCategory1)
+        categories.append(category1)
+        
+        var questionsCategory2 = [Question]()
+        
+        let question1C2 = Question(text: "Die Dinosaurier lebten...?", answer1: "mit Schulden", answer2: "knietief im Dispo", answer3: "auf Pump", answer4: "in der Kreide", rightAnswer: 4)
+        questionsCategory2.append(question1C2)
+        let question2C2 = Question(text: "Scotty, der Ingenieur des Raumschiffs Enterprise, war bei den \"Ausflügen\" meist nicht dabei, weil er...?", answer1: "selbstständige", answer2: "angestellte", answer3: "beamte", answer4: "vorgesetzte", rightAnswer: 3)
+        questionsCategory2.append(question2C2)
+        
+        let category2 = Category(title: "Dumme Fragen", questions: questionsCategory2)
+        categories.append(category2)
     }
 
     override func didReceiveMemoryWarning() {
@@ -34,10 +47,12 @@ class ViewController: UIViewController {
     
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let controller = segue.destinationViewController as? QuestionViewController {
-            controller.questions = questions
-            controller.numberOfQuestions = questions.count
+            let index = Int(arc4random()) % categories.count
+            controller.questions = categories[index].questions
+            controller.numberOfQuestions = categories[index].questions.count
         }
     }
 
 }
+
 
