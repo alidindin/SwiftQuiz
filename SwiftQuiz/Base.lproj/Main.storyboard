@@ -37,20 +37,27 @@
                                 <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                                 <subviews>
                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Hallo Welt" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dDZ-nB-JtT">
-                                        <rect key="frame" x="261" y="0.0" width="78" height="200"/>
+                                        <rect key="frame" x="261" y="0.0" width="78" height="150"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                         <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                         <nil key="highlightedColor"/>
                                     </label>
                                     <imageView userInteractionEnabled="NO" contentMode="center" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="BeispielBild" translatesAutoresizingMaskIntoConstraints="NO" id="r3N-dH-0yS">
-                                        <rect key="frame" x="250" y="200" width="100" height="200"/>
+                                        <rect key="frame" x="250" y="150" width="100" height="150"/>
                                     </imageView>
                                     <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ewp-Ac-w8d">
-                                        <rect key="frame" x="238" y="400" width="124" height="200"/>
+                                        <rect key="frame" x="238" y="300" width="124" height="150"/>
                                         <fontDescription key="fontDescription" type="system" pointSize="30"/>
                                         <state key="normal" title="👽Start👽"/>
                                         <connections>
                                             <segue destination="aF3-oQ-0Ui" kind="show" id="X5m-5I-yic"/>
+                                        </connections>
+                                    </button>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="zqd-3S-lRw">
+                                        <rect key="frame" x="279" y="450" width="42" height="150"/>
+                                        <state key="normal" title="About"/>
+                                        <connections>
+                                            <segue destination="ach-xR-E8v" kind="show" id="9uf-RS-gWi"/>
                                         </connections>
                                     </button>
                                 </subviews>
@@ -169,6 +176,49 @@
                 <placeholder placeholderIdentifier="IBFirstResponder" id="hVU-6i-C2z" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1754" y="453"/>
+        </scene>
+        <!--About-->
+        <scene sceneID="lBr-qa-fba">
+            <objects>
+                <viewController title="About" id="ach-xR-E8v" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="m19-BG-pRK"/>
+                        <viewControllerLayoutGuide type="bottom" id="feC-eM-tcS"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="lrH-vC-dzK">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="gyx-s7-tvD">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Das großartige Swift Quiz!" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="h7n-KY-eDP">
+                                        <rect key="frame" x="199" y="0.0" width="202" height="300"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Created by Garrit Schaap" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="J9W-8q-lX3">
+                                        <rect key="frame" x="203" y="300" width="194" height="300"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="gyx-s7-tvD" firstAttribute="leading" secondItem="lrH-vC-dzK" secondAttribute="leading" id="9eR-7v-If1"/>
+                            <constraint firstAttribute="bottom" secondItem="gyx-s7-tvD" secondAttribute="bottom" id="PTD-cV-seF"/>
+                            <constraint firstAttribute="trailing" secondItem="gyx-s7-tvD" secondAttribute="trailing" id="gbG-tt-5Gd"/>
+                            <constraint firstItem="gyx-s7-tvD" firstAttribute="top" secondItem="lrH-vC-dzK" secondAttribute="top" id="sDj-9c-dS1"/>
+                        </constraints>
+                    </view>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="o03-S6-mNO" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1754" y="1272"/>
         </scene>
     </scenes>
     <resources>
