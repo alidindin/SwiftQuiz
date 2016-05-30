@@ -18,6 +18,7 @@ class QuestionViewController: UIViewController {
     
     var questions: [Question]?
     var question: Question?
+    var currentQuestion = 1
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,6 +26,8 @@ class QuestionViewController: UIViewController {
         guard let questions = questions else {
             return
         }
+        
+        title = "Frage \(currentQuestion)"
         
         let index = Int(arc4random()) % questions.count
         question = questions[index]
@@ -105,6 +108,7 @@ class QuestionViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let controller = segue.destinationViewController as? QuestionViewController {
             controller.questions = questions
+            controller.currentQuestion += 1
         }
     }
 
