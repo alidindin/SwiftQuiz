@@ -19,6 +19,8 @@ class QuestionViewController: UIViewController {
     var questions: [Question]?
     var question: Question?
     var currentQuestion = 1
+    var numberOfQuestions = 0
+    var rightAnswers = 0
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -64,6 +66,7 @@ class QuestionViewController: UIViewController {
     private func checkAnswer(index: Int, button: UIButton) {
         if index == question?.rightAnswer {
             print("Richtig")
+            rightAnswers += 1
             button.backgroundColor = UIColor.greenColor()
             
             let alertController = UIAlertController(title: "Richtig", message: "Super!", preferredStyle: .Alert)
@@ -98,7 +101,12 @@ class QuestionViewController: UIViewController {
             // This is the code for our hack
 //            performSegueWithIdentifier("ShowQuestion", sender: nil)
         } else {
-            navigationController?.popToRootViewControllerAnimated(true)
+            if let viewController = storyboard?.instantiateViewControllerWithIdentifier("ResultScreen") as? ResultViewController {
+                viewController.rightAnswers = rightAnswers
+                viewController.numberOfQuestions = numberOfQuestions
+                self.navigationController?.pushViewController(viewController, animated: true)
+            }
+//            navigationController?.popToRootViewControllerAnimated(true)
         }
     }
 
@@ -108,7 +116,9 @@ class QuestionViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if let controller = segue.destinationViewController as? QuestionViewController {
             controller.questions = questions
-            controller.currentQuestion += 1
+            controller.currentQuestion = currentQuestion + 1
+            controller.rightAnswers = rightAnswers
+            controller.numberOfQuestions = numberOfQuestions
         }
     }
 

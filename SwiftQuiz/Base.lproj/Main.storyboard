@@ -177,6 +177,59 @@
             </objects>
             <point key="canvasLocation" x="1754" y="453"/>
         </scene>
+        <!--Result View Controller-->
+        <scene sceneID="5Hm-wG-lna">
+            <objects>
+                <viewController storyboardIdentifier="ResultScreen" id="MlS-5d-P1l" customClass="ResultViewController" customModule="SwiftQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="92Z-17-STV"/>
+                        <viewControllerLayoutGuide type="bottom" id="oU8-cL-Ktf"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="Pnn-AC-jxQ">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <stackView opaque="NO" contentMode="scaleToFill" axis="vertical" distribution="fillEqually" alignment="center" translatesAutoresizingMaskIntoConstraints="NO" id="cPW-ly-g7j">
+                                <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                                <subviews>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Super! Du hast es geschafft." textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="9Yh-3C-knF">
+                                        <rect key="frame" x="191" y="0.0" width="218" height="200"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Von x Fragen hast du y richtig beantwortet!" textAlignment="natural" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VS0-T5-ppW">
+                                        <rect key="frame" x="135" y="200" width="330" height="200"/>
+                                        <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                        <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                        <nil key="highlightedColor"/>
+                                    </label>
+                                    <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="XZw-55-XW4">
+                                        <rect key="frame" x="264" y="400" width="72" height="200"/>
+                                        <state key="normal" title="Danke! 👍"/>
+                                        <connections>
+                                            <action selector="buttonHandler:" destination="MlS-5d-P1l" eventType="touchUpInside" id="kz6-O1-1kL"/>
+                                        </connections>
+                                    </button>
+                                </subviews>
+                            </stackView>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="cPW-ly-g7j" firstAttribute="leading" secondItem="Pnn-AC-jxQ" secondAttribute="leading" id="7WB-wM-dI1"/>
+                            <constraint firstAttribute="bottom" secondItem="cPW-ly-g7j" secondAttribute="bottom" id="Fie-18-V7B"/>
+                            <constraint firstAttribute="trailing" secondItem="cPW-ly-g7j" secondAttribute="trailing" id="jvP-P8-eQ3"/>
+                            <constraint firstItem="cPW-ly-g7j" firstAttribute="top" secondItem="Pnn-AC-jxQ" secondAttribute="top" id="z8x-0R-Itg"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="resultLabel" destination="VS0-T5-ppW" id="Kmk-gb-vAt"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="mso-ah-ukQ" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="2586" y="452"/>
+        </scene>
         <!--About-->
         <scene sceneID="lBr-qa-fba">
             <objects>
