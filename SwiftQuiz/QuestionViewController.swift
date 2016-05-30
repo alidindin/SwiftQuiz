@@ -84,7 +84,16 @@ class QuestionViewController: UIViewController {
     
     private func showNextQuestion() {
         if questions?.count > 0 {
-            performSegueWithIdentifier("ShowQuestion", sender: nil)
+            // Here is the code to call another Storyboard ViewController without our hack
+            if let viewController = storyboard?.instantiateViewControllerWithIdentifier("QuestionViewController") {
+                let segue = UIStoryboardSegue(identifier: nil, source: self, destination: viewController, performHandler: {
+                    self.navigationController?.pushViewController(viewController, animated: true)
+                })
+                self.prepareForSegue(segue, sender: nil)
+                segue.perform()
+            }
+            // This is the code for our hack
+//            performSegueWithIdentifier("ShowQuestion", sender: nil)
         } else {
             navigationController?.popToRootViewControllerAnimated(true)
         }

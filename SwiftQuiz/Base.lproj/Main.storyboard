@@ -73,7 +73,7 @@
         <!--Frage-->
         <scene sceneID="ymq-Nt-oJ2">
             <objects>
-                <viewController id="aF3-oQ-0Ui" customClass="QuestionViewController" customModule="SwiftQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController storyboardIdentifier="QuestionViewController" id="aF3-oQ-0Ui" customClass="QuestionViewController" customModule="SwiftQuiz" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="uf2-Ly-6rS"/>
                         <viewControllerLayoutGuide type="bottom" id="q3p-e6-WXb"/>
